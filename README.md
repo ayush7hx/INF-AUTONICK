@@ -8,11 +8,8 @@ not set one, the bot falls back to their Discord username. A server nickname
 is not used as the source.
 
 The nickname is truncated to Discord's 32-character limit. Running `/setup`
-starts a background pass over existing members and formats their nicknames;
-members who join later are handled automatically too. Existing matching
-nicknames are left unchanged. The bot spaces nickname edits to reduce rate
-limits, so a large server can take a while to finish. Run `/setup` again if
-Discord rate limits interrupt the pass.
+enables automatic nickname formatting for members who join after setup.
+Existing members' nicknames are not changed.
 
 ## Discord setup
 
