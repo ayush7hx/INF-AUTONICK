@@ -3,9 +3,16 @@
 When a member joins a configured server, the bot sets their server nickname to
 `INF NAME`, uppercased and rendered with Unicode monospace-style letters.
 For example, `Ayush Sharma` becomes `𝙸𝙽𝙵 𝙰𝚈𝚄𝚂𝙷 𝚂𝙷𝙰𝚁𝙼𝙰`.
+The name comes from the member's Discord profile display name; if they have
+not set one, the bot falls back to their Discord username. A server nickname
+is not used as the source.
 
-The nickname is truncated to Discord's 32-character limit. Existing members
-are not changed by setup; only members who join afterwards are updated.
+The nickname is truncated to Discord's 32-character limit. Running `/setup`
+starts a background pass over existing members and formats their nicknames;
+members who join later are handled automatically too. Existing matching
+nicknames are left unchanged. The bot spaces nickname edits to reduce rate
+limits, so a large server can take a while to finish. Run `/setup` again if
+Discord rate limits interrupt the pass.
 
 ## Discord setup
 
